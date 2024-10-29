@@ -4,127 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HPolish Tint</title>
-    <style>
-        /* Основни стилове за страницата */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #303030;
-            color: #e0e0e0;
-            margin: 0;
-            background-image: url('./background.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 80%;
-            background-attachment: fixed; /* Фонът следва скролването */
-        }
-
-        /* Стилове за навигационната лента */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-color: #303030;
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .navbar a {
-            color: #e0e0e0;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .navbar a:hover {
-            background-color: #444;
-            color: #fff;
-        }
-
-        /* Стилове за секциите */
-        section {
-            padding: 60px 20px;
-            text-align: center;
-            position: relative;
-            z-index: 10;
-            background-color: rgba(18, 18, 18, 0.8);
-            border-radius: 8px;
-            margin: 20px auto;
-            width: 90%;
-            max-width: 800px;
-        }
-
-        #about, #gallery, #contact {
-            min-height: 100vh;
-        }
-
-        /* Клас за плавно скролиране */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Стилове за галерията */
-        .gallery img {
-            width: 30%;
-            margin: 5px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: transform 0.2s;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Модален прозорец за изображенията */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 200;
-            padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 80vh;
-        }
-
-        .close, .prev, .next {
-            position: absolute;
-            top: 50%;
-            color: white;
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .close {
-            top: 20px;
-            right: 35px;
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-
-        .close:hover, .prev:hover, .next:hover {
-            color: #bbb;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -142,7 +22,7 @@
     </section>
 
     <!-- Секция "Галерия" -->
-    <section id="gallery">
+    <section id="gallery" color: #FFA500;>
         <h2>Галерия</h2>
         <p>Разгледайте някои от нашите изпълнени проекти за затъмняване на прозорци.</p>
         <div class="gallery">
@@ -197,7 +77,7 @@
         }
 
         // Затваряне на модала при натискане на "Escape"
-        document.addEventListener("keydown", function(event) {
+        document.addEventListener("keydown", function (event) {
             if (event.key === "Escape") {
                 closeModal();
             }
