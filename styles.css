@@ -126,8 +126,7 @@ section h2 {
 @media (max-width: 768px) {
     body {
         background-attachment: scroll; /* Позволява изображението да се движи при скролване */
-        background-size: contain; /* Приспособява изображението да се вижда цялото */
-        background-position: top center; /* Изравнява го в горната част и центъра на екрана */
+        background-size: 100% auto; /* Ограничаваме ширината до 100% на екрана */
     }
 }
 
