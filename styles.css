@@ -11,29 +11,62 @@ body {
     background-attachment: fixed; /* Фонът следва скролването */
 }
 
-/* Стилове за навигационната лента */
 .navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     background-color: #303030;
-    padding: 10px 0;
+    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-    .navbar a {
+.menu {
+    display: flex;
+    gap: 20px; /* Разстояние между линковете */
+}
+
+    .menu a {
         color: #e0e0e0;
-        padding: 14px 20px;
         text-decoration: none;
         text-transform: uppercase;
         font-weight: bold;
     }
 
-        .navbar a:hover {
+        .menu a:hover {
             background-color: #444;
             color: #fff;
         }
+
+/* Стилове за падащото меню */
+.menu-toggle {
+    display: none; /* Скриваме бутона по подразбиране */
+    font-size: 30px;
+    color: #e0e0e0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Скриваме менюто по подразбиране */
+        flex-direction: column; /* Вертикално подреждане на линковете */
+        background-color: #303030;
+        position: absolute;
+        top: 60px; /* Позиция под навигационната лента */
+        width: 100%;
+    }
+
+        .menu.show {
+            display: flex; /* Показваме менюто, когато е активирано */
+        }
+
+    .menu-toggle {
+        display: block; /* Показваме бутона за меню на малки екрани */
+    }
+}
 
 /* Стилове за секциите */
 section {
@@ -126,7 +159,8 @@ section h2 {
 @media (max-width: 768px) {
     body {
         background-attachment: scroll; /* Позволява изображението да се движи при скролване */
-        background-size: 100% auto; /* Ограничаваме ширината до 100% на екрана */
+        background-size: contain; /* Приспособява изображението да се вижда цялото */
+        background-position: top center; /* Изравнява го в горната част и центъра на екрана */
     }
 }
 
